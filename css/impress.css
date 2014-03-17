@@ -351,20 +351,50 @@ a:focus {
 	color: hsl(240,64%,32%);	
     text-shadow: 0 2px 4px hsla(240, 0%, 100%, .2);
     font-size: 2em;
-    font-family: Consolas "Courier New" "Lucida Console" Monospace
+    font-family: Consolas "Courier New" "Lucida Console" Monospace;
 }
 
 .skill {
 	color: hsl(240,64%,16%);	
     text-shadow: 0 2px 4px hsla(240, 0%, 100%, .2);
     font-size: 4em;
-    font-family: Consolas "Courier New" "Lucida Console" Monospace
+    font-family: Consolas "Courier New" "Lucida Console" Monospace;
+	position: relative;
 }
 
-.skill+span {
+.desc {
 	color: hsla(240,8%,48%,0.8);
     font-size: 2em;
     padding: 5px;
     border: dashed 1px;
     border-radius: 5px;
+}
+
+.arrow {
+  height: 0px;
+  position: absolute;
+  bottom: 0px;
+  left: 300px;
+  margin-bottom: 100px;
+  transition: height 2s ease 0.5s;
+}
+
+.step.active .arrow {
+  height: 100px;
+}
+
+.arrow-up {
+	width: 0; 
+	height: 0; 
+	border-left: 200px solid transparent;
+	border-right: 200px solid transparent;
+	border-bottom: 100px solid hsla(240, 64%, 64%, 0.8);
+}
+
+.arrow-handle {
+	width: 0px;
+	margin-left: 100px;
+	height: 100%;
+	border-right: 200px solid;
+	-webkit-border-image: -webkit-linear-gradient(hsla(240, 64%, 64%, 0.8), hsla(240, 64%, 96%, 0.2)) 1 100%;
 }
